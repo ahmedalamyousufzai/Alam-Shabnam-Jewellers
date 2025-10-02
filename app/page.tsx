@@ -28,7 +28,7 @@ export default function Home() {
     whatsapp: "https://wa.me/923003361510",
     facebook: "https://www.facebook.com/alam.khan.394180/",
     instagram: "https://instagram.com/alamkhanzargar",
-    tiktok: "https://tiktok.com/@alamkhanzargar1",
+    tiktok: "https://tiktok.com/@shabnamjewellers.1",
     address:
       "Shabnam Jewellers, Banaras Main Sarafa Bazar Near Malang Hotel, Karachi West",
     intro:
@@ -36,146 +36,127 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative w-full h-80">
-        <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center px-4 bg-white">
-          <h1 className="text-4xl md:text-6xl font-bold text-black leading-tight">
-          WELCOME TO
-         <br />
-         <span className="text-yellow-400">SHABNAM JEWELLERS</span>
-         </h1>
+    <>
+      <main className="min-h-screen flex flex-col">
+        {/* Wrapper with Background (Footer ke alawa) */}
+        <div
+          className="flex-1"
+          style={{
+            backgroundImage: "url('/images/background.png')",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+          }}
+        >
+          {/* Hero Section */}
+          <section className="relative w-full h-80">
+            <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center px-4">
+              <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+                WELCOME TO
+                <br />
+                <span className="text-yellow-400">SHABNAM JEWELLERS</span>
+              </h1>
+              <p className="mt-4 text-lg md:text-2xl text-gray-100 max-w-2xl">
+                Premium Gold Jewellery Since 1975
+              </p>
+            </div>
+          </section>
 
-          <p className="mt-4 text-lg md:text-2xl text-black max-w-2xl">
-            Premium Gold Jewellery Since 1975
-          </p>
+          {/* Founder Section */}
+          <section className="py-12">
+            {/* Founder Title Box */}
+            <div className="max-w-md mx-auto mb-10">
+              <div className="border-4 border-black bg-gradient-to-r from-black rounded-2xl shadow-xl p-4 text-center">
+                <h2 className="text-3xl font-extrabold tracking-wide text-white uppercase">
+                  Founder
+                </h2>
+                <div className="mt-2 w-16 h-1 bg-black mx-auto rounded"></div>
+              </div>
+            </div>
+
+            {/* Image & Info Wrapper */}
+            <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-8">
+              {/* Left - Image */}
+              <div className="border-4 border-black rounded-xl shadow-xl bg-white p-3">
+                <Image
+                  src={founder.img}
+                  alt={founder.name}
+                  width={280}
+                  height={280}
+                  className="rounded-lg object-cover"
+                />
+              </div>
+
+              {/* Right - Name + Role */}
+              <div className="border-2 border-black rounded-xl bg-gradient-to-r from-white shadow-md p-6 text-center md:text-left flex-1">
+                <h3 className="text-3xl font-extrabold text-gray-900">{founder.name}</h3>
+                <h4 className="text-lg text-black font-semibold">{founder.role}</h4>
+              </div>
+            </div>
+          </section>
+
+          {/* About Founder */}
+          <section className="max-w-3xl mx-auto mt-6 border-2 border-black rounded-xl bg-gradient-to-r from-white shadow-md p-6 text-center">
+            <h3 className="text-lg font-semibold mb-2">About the Founder</h3>
+            <p className="text-black">{founder.intro}</p>
+          </section>
+
+          {/* Address */}
+          <section className="max-w-3xl mx-auto mt-6 border-2 border-black rounded-xl bg-gradient-to-r from-white shadow-md p-6 text-center">
+            <h3 className="text-lg font-semibold mb-2">📍 Address</h3>
+            <p className="text-black">{founder.address}</p>
+          </section>
+
+          {/* Social Links */}
+          <section className="max-w-3xl mx-auto mt-6 border-2 border-black rounded-xl bg-gradient-to-r from-gray shadow-md p-6 text-center">
+            <h3 className="text-lg font-semibold mb-4">Connect With Me</h3>
+            <div className="flex justify-center gap-6 text-3xl">
+              <a href={founder.whatsapp} target="_blank" className="text-green-600 hover:scale-110 transition">
+                <FaWhatsapp />
+              </a>
+              <a href={founder.facebook} target="_blank" className="text-blue-600 hover:scale-110 transition">
+                <FaFacebook />
+              </a>
+              <a href={founder.instagram} target="_blank" className="text-pink-500 hover:scale-110 transition">
+                <FaInstagram />
+              </a>
+              <a href={founder.tiktok} target="_blank" className="text-black hover:scale-110 transition">
+                <FaTiktok />
+              </a>
+            </div>
+          </section>
         </div>
-      </section>
 
-      {/* Founder Section */}
-<section className="py-12 bg-gray-100">
-  {/* Founder Title in Boundary */}
-  <div className="max-w-xs mx-auto border-2 border-black bg-blue-800 rounded-xl shadow-md p-3 text-center mb-8">
-    <h2 className="text-2xl font-semibold text-white">Founder</h2>
-  </div>
-
-  {/* Image & Basic Info */}
-<div className="max-w-3xl mx-auto flex flex-col md:flex-row items-center gap-6">
-  
-  {/* Left Side - Image with Border */}
-  <div className="border-4 border-black rounded-xl shadow-lg bg-white p-2">
-    <Image
-      src={founder.img}
-      alt={founder.name}
-      width={260}
-      height={260}
-      className="rounded-lg object-cover"
-    />
-  </div>
-
- {/* Right Side - Name + Role */}
-<div className="p-4 text-left">
-  <h3 className="text-3xl font-extrabold text-gray-900">{founder.name}</h3>
-  <h4 className="text-lg text-yellow-600 font-semibold">{founder.role}</h4>
-
-
-  </div>
-</div>
-
-
-  {/* Intro Box */}
-  <div className="max-w-3xl mx-auto mt-6 border-2 border-black rounded-xl bg-white shadow-md p-6 text-center">
-    <h3 className="text-lg font-semibold mb-2">About the Founder</h3>
-    <p className="text-gray-700">{founder.intro}</p>
-  </div>
-
-  {/* Address Box */}
-  <div className="max-w-3xl mx-auto mt-6 border-2 border-black rounded-xl bg-white shadow-md p-6 text-center">
-    <h3 className="text-lg font-semibold mb-2">📍 Address</h3>
-    <p className="text-gray-600">{founder.address}</p>
-  </div>
-
-  {/* Social Links Box */}
-  <div className="max-w-3xl mx-auto mt-6 border-2 border-black rounded-xl bg-white shadow-md p-6 text-center">
-    <h3 className="text-lg font-semibold mb-4">Connect With Me</h3>
-    <div className="flex justify-center gap-6 text-3xl">
-      <a
-        href={founder.whatsapp}
-        target="_blank"
-        className="text-green-600 hover:scale-110 transition"
-      >
-        <FaWhatsapp />
-      </a>
-      <a
-        href={founder.facebook}
-        target="_blank"
-        className="text-blue-600 hover:scale-110 transition"
-      >
-        <FaFacebook />
-      </a>
-      <a
-        href={founder.instagram}
-        target="_blank"
-        className="text-pink-500 hover:scale-110 transition"
-      >
-        <FaInstagram />
-      </a>
-      <a
-        href={founder.tiktok}
-        target="_blank"
-        className="text-black hover:scale-110 transition"
-      >
-        <FaTiktok />
-      </a>
-    </div>
-  </div>
-</section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-gray-300 py-6 mt-0">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-center md:text-left">
-          {/* Column 1 */}
-          <div>
-            <h3 className="text-lg font-bold text-white">Shabnam Jewellers</h3>
-            <p className="mt-2 text-sm">Premium Gold Jewellery Since 1975</p>
-          </div>
-
-          {/* Column 2 */}
-          <div>
-            <h3 className="text-lg font-bold text-white">Visit Us</h3>
-            <p className="mt-2 text-sm">
-              Banaras Main Sarafa Bazar Near Malang Hotel, Karachi West
-            </p>
-          </div>
-
-          {/* Column 3 */}
-          <div>
-            <h3 className="text-lg font-bold text-white">Contact</h3>
+        {/* Footer */}
+        <footer className="bg-gray-900 text-gray-300 py-4 mt-0">
+          <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 gap-2">
+            {/* Left - Created By */}
             <a
-              href="https://wa.me/923003361510"
+              href="https://avrx-tech-main.vercel.app/"
               target="_blank"
-              className="block mt-2 text-sm text-green-400 hover:underline"
+              rel="noopener noreferrer"
+              className="hover:text-green-400 transition"
             >
-              WhatsApp Us
+              Created By <span className="font-semibold">Avrx Tech</span>
+            </a>
+
+            {/* Center - Copyright */}
+            <span>© {new Date().getFullYear()} Shabnam Jewellers. All Rights Reserved.</span>
+
+            {/* Right - Visit Us */}
+            <a
+              href="https://www.google.com/maps/place/shabnam+jewellers,+Karachi/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-yellow-400 transition"
+            >
+              Visit Us
             </a>
           </div>
-        </div>
-
-        <div className="border-t border-gray-700 mt-6 pt-4 px-6 flex justify-between items-center text-sm text-gray-400">
-          <span>
-            © {new Date().getFullYear()} Shabnam Jewellers. All Rights Reserved.
-          </span>
-          <a
-            href="https://avrx-tech-main.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-green-400 transition"
-          >
-            Created By <span className="font-semibold">Avrx Tech</span>
-          </a>
-        </div>
-      </footer>
-    </main>
+        </footer>
+      </main>
+    </>
   );
 }
+
 
