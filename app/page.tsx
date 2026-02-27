@@ -27,8 +27,8 @@ export default function Home() {
     img: "/images/ceo-1.jpg",
     whatsapp: "https://wa.me/923003361510",
     facebook: "https://www.facebook.com/alam.khan.394180/",
-    instagram: "https://instagram.com/alamkhanzargar",
-    tiktok: "https://tiktok.com/@shabnamjewellers.1",
+    instagram: "https://instagram.com/shabnamjewelry",
+    tiktok: "https://tiktok.com/@shabnamjewellery",
     address:
       "Shabnam Jewellers, Banaras Main Sarafa Bazar Near Malang Hotel, Karachi West",
     intro:
@@ -38,7 +38,6 @@ export default function Home() {
   return (
     <>
       <main className="min-h-screen flex flex-col">
-        {/* Wrapper with Background (Footer ke alawa) */}
         <div
           className="flex-1"
           style={{
@@ -64,7 +63,6 @@ export default function Home() {
 
           {/* Founder Section */}
           <section className="py-12">
-            {/* Founder Title Box */}
             <div className="max-w-md mx-auto mb-10">
               <div className="border-4 border-black bg-gradient-to-r from-black rounded-2xl shadow-xl p-4 text-center">
                 <h2 className="text-3xl font-extrabold tracking-wide text-white uppercase">
@@ -74,9 +72,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Image & Info Wrapper */}
             <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-8">
-              {/* Left - Image */}
               <div className="border-4 border-black rounded-xl shadow-xl bg-white p-3">
                 <Image
                   src={founder.img}
@@ -87,10 +83,13 @@ export default function Home() {
                 />
               </div>
 
-              {/* Right - Name + Role */}
               <div className="border-2 border-black rounded-xl bg-gradient-to-r from-white shadow-md p-6 text-center md:text-left flex-1">
-                <h3 className="text-3xl font-extrabold text-gray-900">{founder.name}</h3>
-                <h4 className="text-lg text-black font-semibold">{founder.role}</h4>
+                <h3 className="text-3xl font-extrabold text-gray-900">
+                  {founder.name}
+                </h3>
+                <h4 className="text-lg text-black font-semibold">
+                  {founder.role}
+                </h4>
               </div>
             </div>
           </section>
@@ -127,12 +126,21 @@ export default function Home() {
           </section>
         </div>
 
+        {/* ✅ Floating WhatsApp Button */}
+        <a
+          href="https://wa.me/923003361510?text=Assalam%20o%20Alaikum%20I%20want%20details%20about%20gold%20jewellery"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-5 right-5 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl border-4 border-white z-50 transition-all duration-300 hover:scale-110"
+        >
+          <FaWhatsapp size={28} />
+        </a>
+
         {/* Footer */}
         <footer className="bg-gray-900 text-gray-300 py-4 mt-0">
           <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 gap-2">
-            {/* Left - Created By */}
             <a
-              href="https://avrx-tech-main.vercel.app/"
+              href="https://avrx-tech.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-green-400 transition"
@@ -140,10 +148,10 @@ export default function Home() {
               Created By <span className="font-semibold">Avrx Tech</span>
             </a>
 
-            {/* Center - Copyright */}
-            <span>© {new Date().getFullYear()} Shabnam Jewellers. All Rights Reserved.</span>
+            <span>
+              © {new Date().getFullYear()} Shabnam Jewellers. All Rights Reserved.
+            </span>
 
-            {/* Right - Visit Us */}
             <a
               href="https://www.google.com/maps/place/shabnam+jewellers,+Karachi/"
               target="_blank"
