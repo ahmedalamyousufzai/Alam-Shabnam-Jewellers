@@ -93,13 +93,13 @@ export default function Home() {
           <section className="relative h-80 flex items-center justify-center text-center">
             <div className="absolute top-6 left-6">
               <Image
-                src="/images/logo.png"
-                alt="Shabnam Jewellers Logo"
-                width={90}
-                height={90}
-                className="object-contain"
-                priority
-              />
+  src="/images/logo.png"
+  alt="Shabnam Jewellers Logo"
+  width={70}       
+  height={70}     
+  className="object-contain drop-shadow-[0_0_10px_gold] md:w-20 md:h-20"
+  priority
+/>
             </div>
 <div>
              <h1 className="text-4xl md:text-6xl font-extrabold bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 bg-clip-text text-transparent">
