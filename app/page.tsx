@@ -1,5 +1,6 @@
 "use client";
 
+import JewelleryVideos from "@/components/JewelleryVideos";
 import JewelleryCollection from "@/components/JewelleryCollection";
 import { useState } from "react";
 import Image from "next/image";
@@ -24,17 +25,12 @@ export default function Home() {
 
 
   const founder = {
-    name: "M.Alam Khan",
-    role: "CEO",
-    img: "/images/ceo-1.jpg",
     whatsapp: "https://wa.me/923003361510",
     facebook: "https://www.facebook.com/alam.khan.394180/",
     instagram: "https://instagram.com/shabnamjewelry",
     tiktok: "https://tiktok.com/@shabnamjewellery",
     address:
       "Shabnam Jewellers, Banaras Main Sarafa Bazar Near Malang Hotel, Karachi West",
-    intro:
-      "Muhammad Alam Khan is the visionary Founder & CEO of Shabnam Jewellers, with 40+ years of experience in gold jewellery.",
   };
 
   const categories = [
@@ -69,49 +65,29 @@ export default function Home() {
 
         <div className="relative z-10">
 
-          {/* HERO */}
-          <section className="relative h-80 flex items-center justify-center text-center">
-            <div className="absolute top-3 left-3">
-              <Image
-  src="/images/logo.png"
-  alt="Shabnam Jewellers Logo"
-  width={60}       
-  height={60}     
-  className="object-contain drop-shadow-[0_0_08px_gold] md:w-15 md:h-15"
-  priority
-/>
-            </div>
-<div>
-             <h1 className="text-4xl md:text-6xl font-extrabold bg-gradient-to-r from-yellow-500 via-yellow-500 to-yellow-700 bg-clip-text text-transparent">
-  SHABNAM JEWELLERS
-</h1>
+        {/* HERO SECTION */}
+<section
+  className="relative h-72 md:h-[550px] flex items-center justify-center text-center overflow-hidden bg-cover bg-center"
+  style={{ backgroundImage: "url('/images/banner.jpg')" }}
+>
+  <div className="absolute inset-0 bg-black/20 z-10"></div>
 
-<p className="mt-1 md:mt-2 text-lg md:text-2xl text-gray-300">
-  Premium Gold Jewellery Since 1975
-</p>
-            
-            </div>
-          </section>
+  {/* لوگو */}
+  <div className="absolute top-3 left-3 z-20">
+    <Image
+      src="/images/logo.png"
+      alt="Shabnam Jewellers Logo"
+      width={60}
+      height={60}
+      className="object-contain drop-shadow-[0_0_08px_gold] md:w-15 md:h-15"
+      priority
+    />
+  </div>
+</section>
 
-          {/* FOUNDER */}
-          <section className="py-08 text-center">
-            <h2 className="text-3xl font-bold text-white mb-6">Founder</h2>
-            <div className="flex flex-col md:flex-row items-center justify-center gap-10">
-              <Image
-                src={founder.img}
-                alt={founder.name}
-                width={280}
-                height={280}
-                className="rounded-xl object-cover border border-black"
-              />
-              <div>
-                <h3 className="text-2xl font-bold text-white">{founder.name}</h3>
-                <p className="text-gray-300">{founder.role}</p>
-                <p className="text-gray-400 mt-4 max-w-md">{founder.intro}</p>
-              </div>
-            </div>
-          </section>
+
           
+          <JewelleryVideos />
           <JewelleryCollection />
 
           {/* ADDRESS */}
