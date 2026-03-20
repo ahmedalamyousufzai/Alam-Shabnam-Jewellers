@@ -67,7 +67,7 @@ export default function Home() {
 
         {/* HERO SECTION */}
 <section
-  className="relative h-72 md:h-[550px] flex items-center justify-center text-center overflow-hidden bg-cover bg-center"
+ className="relative h-72 md:h-[550px] flex items-center justify-center text-center overflow-hidden bg-contain md:bg-cover bg-center bg-no-repeat"
   style={{ backgroundImage: "url('/images/banner.jpg')" }}
 >
   <div className="absolute inset-0 bg-black/20 z-10"></div>
