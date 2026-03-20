@@ -66,11 +66,14 @@ export default function Home() {
         <div className="relative z-10">
 
         {/* HERO SECTION */}
-<section
- className="relative h-72 md:h-[550px] flex items-center justify-center text-center overflow-hidden bg-contain md:bg-cover bg-center bg-no-repeat"
-  style={{ backgroundImage: "url('/images/banner.jpg')" }}
->
-  <div className="absolute inset-0 bg-black/20 z-10"></div>
+        <section className="relative w-full min-h-[250px] md:min-h-[550px] flex items-center justify-center overflow-hidden">
+  <Image
+    src="/images/banner.jpg"
+    alt="Banner"
+    fill
+    className="object-cover"
+    priority
+  />
 
   {/* لوگو */}
   <div className="absolute top-3 left-3 z-20">
