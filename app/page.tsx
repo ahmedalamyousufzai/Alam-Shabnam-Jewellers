@@ -66,7 +66,7 @@ export default function Home() {
         <div className="relative z-10">
 
         {/* HERO SECTION */}
-        <section className="relative w-full min-h-[280px] md:min-h-[550px] flex items-center justify-center overflow-hidden">
+        <section className="relative w-full min-h-[240px] md:min-h-[550px] flex items-center justify-center overflow-hidden">
   <Image
     src="/images/banner.jpg"
     alt="Banner"
