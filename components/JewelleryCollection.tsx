@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -62,20 +62,19 @@ export default function JewelleryCollection() {
       : filteredSamples;
 
   const nextImage = () => {
-    if (selectedIndex === null) return;
-    setSelectedIndex(
-  (selectedIndex - 1 + filteredSamples.length) % filteredSamples.length
-);
-  };
+  if (selectedIndex === null) return;
+  setSelectedIndex(
+    (selectedIndex + 1) % filteredSamples.length
+  );
+};
 
-  const prevImage = () => {
-    if (selectedIndex === null) return;
-    setSelectedIndex(
-      (selectedIndex - 1 + filteredSamples.length) %
-        filteredSamples.length
-    );
-  };
-
+const prevImage = () => {
+  if (selectedIndex === null) return;
+  setSelectedIndex(
+    (selectedIndex - 1 + filteredSamples.length) %
+      filteredSamples.length
+  );
+};
   const downloadImage = (src: string) => {
     const link = document.createElement("a");
     link.href = src;
@@ -99,20 +98,19 @@ export default function JewelleryCollection() {
     return () => window.removeEventListener("keydown", handleKey);
   }, [selectedIndex]);
 
-  /* Mobile Swipe */
-  let touchStartX = 0;
-  let touchEndX = 0;
+  const touchStartX = useRef(0);
+const touchEndX = useRef(0);
 
-  const handleTouchStart = (e: any) => {
-    touchStartX = e.changedTouches[0].screenX;
-  };
+const handleTouchStart = (e: any) => {
+  touchStartX.current = e.changedTouches[0].screenX;
+};
 
-  const handleTouchEnd = (e: any) => {
-    touchEndX = e.changedTouches[0].screenX;
+const handleTouchEnd = (e: any) => {
+  touchEndX.current = e.changedTouches[0].screenX;
 
-    if (touchStartX - touchEndX > 50) nextImage();
-    if (touchEndX - touchStartX > 50) prevImage();
-  };
+  if (touchStartX.current - touchEndX.current > 50) nextImage();
+  if (touchEndX.current - touchStartX.current > 50) prevImage();
+};
 
   return (
     <section className="py-16 px-4 max-w-6xl mx-auto">
